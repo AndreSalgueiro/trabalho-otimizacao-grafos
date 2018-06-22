@@ -25,7 +25,7 @@ public class Main {
 			System.out.println("Lista Adjac�ncia \n" + lista.formataSaidaLista(grafo));
 			
 
-			/*System.out.println("Digite a aresta a ser removida");
+			System.out.println("Digite a aresta a ser removida");
 			u = sc.nextInt();
 			v = sc.nextInt();
 			lista.removeAresta(grafo, u, v);
@@ -36,7 +36,7 @@ public class Main {
 			v = sc.nextInt();
 			lista.insere(grafo, u, v);
 			lista.insere(grafo, v, u);
-			System.out.println("Lista Adjacência \n" + lista.formataSaidaLista(grafo));*/
+			System.out.println("Lista Adjacência \n" + lista.formataSaidaLista(grafo));
 			
 			System.out.println("Digite o vertice a ser adicionado");
 			u = sc.nextInt();

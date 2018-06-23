@@ -19,7 +19,8 @@ public class Main {
 		matriz.lerGrafo(grafo);//monta a matriz adjacencia
 		
 		System.out.println("Matriz Adjacência \n" + grafo.formataSaidaDaMatriz());
-		
+		System.out.println("Instruções\n");
+		System.out.println("Digite o primeiro valor e tecle enter e digite o segundo valor e tecle enter\n");
 		System.out.println("Digite a aresta a ser removida");
 		u = sc.nextInt();
 		v = sc.nextInt();

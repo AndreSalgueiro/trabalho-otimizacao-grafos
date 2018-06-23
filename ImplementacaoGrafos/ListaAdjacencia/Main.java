@@ -22,9 +22,10 @@ public class Main {
 			
 			
 			//imprime a lista adjacencia
-			System.out.println("Lista Adjac�ncia \n" + lista.formataSaidaLista(grafo));
+			System.out.println("Lista Adjacência \n" + lista.formataSaidaLista(grafo));
+			System.out.println("Instruções\n");
+			System.out.println("Digite o primeiro valor e tecle enter e digite o segundo valor e tecle enter\n");
 			
-
 			System.out.println("Digite a aresta a ser removida");
 			u = sc.nextInt();
 			v = sc.nextInt();
@@ -52,8 +53,8 @@ public class Main {
 			
 			System.out.println("Digite o vertice a ser removido");
 			u = sc.nextInt();
-			lista.removeVertice(grafo, u);
-			System.out.println("Lista Adjacência \n" + lista.formataSaidaLista(grafo));
+			lista.removeVertice(grafoNovoVertice, u);
+			System.out.println("Lista Adjacência \n" + lista.formataSaidaLista(grafoNovoVertice));
 			
 			arquivo.close();
 			lerArquivo.close();

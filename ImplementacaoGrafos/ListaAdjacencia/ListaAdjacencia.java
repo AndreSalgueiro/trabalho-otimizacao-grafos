@@ -59,13 +59,15 @@ public class ListaAdjacencia {
 	protected void removeVertice(Grafo G, int vertice) {
 		NoAresta aux;
 		int i;
-		int j = G.n-1;
-		while(G.L[vertice-1].prox!=null) {
+		G.n = G.n-1;
+		while(G.L.length >= vertice &&  G.L[vertice-1].prox!=null) {
 			aux = G.L[vertice-1].prox;
 			i = aux.vizinho;
 			removeAresta(G, vertice, i);
 			}
-		G.L[vertice-1].vizinho = 0; 
+		if(G.L.length >= vertice) {
+			G.L[vertice-1].vizinho = 0; 
+		}
 	}
 	
 	public NoAresta[] insereVertice(Grafo G, int u)

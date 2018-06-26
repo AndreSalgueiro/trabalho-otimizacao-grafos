@@ -40,7 +40,7 @@ public class Aresta {
 	
 	public int obterVertice_W_daAresta() {
 		int w = 0;
-		w = Character.getNumericValue(this.numAresta.charAt(3));
+		w = Character.getNumericValue(this.numAresta.charAt(2));
 		return w;
 	}
 }

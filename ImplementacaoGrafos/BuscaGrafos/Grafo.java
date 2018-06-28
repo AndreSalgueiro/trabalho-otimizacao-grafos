@@ -60,7 +60,7 @@ public class Grafo {
 			//setando as arestas do grafo
 			StringBuffer aux3 = new StringBuffer(aux2);
 			Aresta aresta = new Aresta();
-			aux3.deleteCharAt(aux3.length()-1);//exclui a ultima virgula que foi adicionada
+			aux3.deleteCharAt(aux3.lastIndexOf(","));//exclui a ultima virgula que foi adicionada
 			aresta.setNumAresta(aux3.toString());
 			this.arestas.add(aresta);
 		}

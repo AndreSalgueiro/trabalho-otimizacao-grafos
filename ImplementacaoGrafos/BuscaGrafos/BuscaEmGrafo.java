@@ -68,7 +68,7 @@ public class BuscaEmGrafo {
 	public boolean temCiclo(Grafo grafo) {
 		buscaCompleta(grafo);
 			for(int vw = 0; vw < grafo.getArestas().size(); vw++) {
-				if(!grafo.getArestas().get(vw).getExplorada()) {
+				if(!grafo.getArestas().get(vw).getDescoberta()) {
 					return true;
 				}
 			}

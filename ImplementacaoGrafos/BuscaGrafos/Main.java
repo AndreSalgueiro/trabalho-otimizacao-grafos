@@ -9,30 +9,30 @@ import java.util.List;
 public class Main {
 	public static void main(String[] args)throws Exception {
 		
-		FileReader arquivo = new FileReader("Grafo_ConexoParaMedirTempo.txt");
+		FileReader arquivo = new FileReader("Grafo_Ciclo.txt");
 		BufferedReader lerArq = new BufferedReader(arquivo);
 		Grafo grafo = new Grafo(lerArq);
 		BuscaEmGrafo buscar = new BuscaEmGrafo();
 		
 		//****************************************************************************************************************************************************
 
-		long timeInicio = System.nanoTime();
-		
-		buscar.busca(grafo);
-		
-		long timeFinal = System.nanoTime();
-		long elapsTime = timeFinal - timeInicio;
-		System.out.println("O metodo executou em\n " +elapsTime);
-		
-		System.out.println("Quantidade de arestas do grafo\n"+grafo.getArestas().size());
-		for(Aresta arestas : grafo.getArestas()) {
-			System.out.println("\nAresta - "+arestas.getNumAresta()+" | Descoberta - "+arestas.getDescoberta()+" | Explorada - " +arestas.getExplorada()+"\n");
-		}
-		System.out.println("\nQuantidade de vertices do grafo\n"+grafo.getVertices().size());
-		for(Vertice vertices: grafo.getVertices() ) {
-			System.out.println("\nVertices - "+vertices.getNumVertice()+" | Visitado - "+vertices.getVisitado()+"\n");
-		}
-		
+//		long timeInicio = System.nanoTime();
+//		
+//		buscar.busca(grafo);
+//		
+//		long timeFinal = System.nanoTime();
+//		long elapsTime = timeFinal - timeInicio;
+//		System.out.println("O metodo executou em\n " +elapsTime);
+//		
+//		System.out.println("Quantidade de arestas do grafo\n"+grafo.getArestas().size());
+//		for(Aresta arestas : grafo.getArestas()) {
+//			System.out.println("\nAresta - "+arestas.getNumAresta()+" | Descoberta - "+arestas.getDescoberta()+" | Explorada - " +arestas.getExplorada()+"\n");
+//		}
+//		System.out.println("\nQuantidade de vertices do grafo\n"+grafo.getVertices().size());
+//		for(Vertice vertices: grafo.getVertices() ) {
+//			System.out.println("\nVertices - "+vertices.getNumVertice()+" | Visitado - "+vertices.getVisitado()+"\n");
+//		}
+//		
 		
 		//****************************************************************************************************************************************************
 		
@@ -57,15 +57,15 @@ public class Main {
 //		long timeInicio = System.nanoTime();
 //		
 //		if(buscar.ehConexo(grafo)) {//Usa busca
-//			System.out.println("\nO grafo é conexo");
+//			System.out.println("\nO grafo é conexo\n");
 //		}else {
 //			System.out.println("\nO grafo não é conexo");
 //		}
-		
+//		
 //		long timeFinal = System.nanoTime();
 //		long elapsTime = timeFinal - timeInicio;
 //		System.out.println("O metodo executou em\n " +elapsTime);
-		
+//		
 //		for(Aresta arestas : grafo.getArestas()) {
 //			System.out.println("\nAresta - "+arestas.getNumAresta()+" | Descoberta - "+arestas.getDescoberta()+" | Explorada - " +arestas.getExplorada()+"\n");
 //		}
@@ -82,8 +82,8 @@ public class Main {
 //			System.out.println("\nO grafo tem ciclo");
 //		}else {
 //			System.out.println("\nO grafo não tem ciclo");
-//		}
-		
+//		}	
+//		
 //		long timeFinal = System.nanoTime();
 //		long elapsTime = timeFinal - timeInicio;
 //		System.out.println("O metodo executou em\n " +elapsTime);
@@ -136,17 +136,17 @@ public class Main {
 		
 		//****************************************************************************************************************************************************
 		
-//		long timeInicio = System.nanoTime();
-//		
-//		Grafo grafoImprimir = buscar.obterFlorestaGeradora(grafo); //Usa Busca Completa
-//		
-//		long timeFinal = System.nanoTime();
-//		long elapsTime = timeFinal - timeInicio;
-//		System.out.println("O metodo executou em\n " +elapsTime);
-//		for(int i = 0; i < grafoImprimir.getArestas().size(); i++) {
-//			
-//			System.out.println("\nArestas da foresta geradora\n\n"+grafoImprimir.getArestas().get(i));
-//		}
+		long timeInicio = System.nanoTime();
+		
+		Grafo grafoImprimir = buscar.obterFlorestaGeradora(grafo); //Usa Busca Completa
+		
+		long timeFinal = System.nanoTime();
+		long elapsTime = timeFinal - timeInicio;
+		System.out.println("O metodo executou em\n " +elapsTime);
+		for(int i = 0; i < grafoImprimir.getArestas().size(); i++) {
+			
+			System.out.println("\nArestas da foresta geradora\n\n"+grafoImprimir.getArestas().get(i));
+		}
 		
 		//****************************************************************************************************************************************************
 		

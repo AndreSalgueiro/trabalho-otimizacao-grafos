@@ -17,6 +17,11 @@ public class Grafo {
 		obterLinhasArq(lerArq);
 	}
 	
+	//Novo construtor usado no metodo ObterArvoreGeradora
+	public Grafo(Grafo grafo)throws Exception {
+		this.vertices = grafo.getVertices();
+	}
+	
 	public void obterLinhasArq(BufferedReader lerArq)throws Exception {
 		String linha;
 		List temp = new ArrayList();
@@ -77,5 +82,71 @@ public class Grafo {
 	
 	public void setArestas(List<Aresta> vw) {
 		this.arestas = vw;
+	}
+	
+	//Novo metodo
+	public int primeiroViz(int r) {
+		int u = 0;
+		int v = 0;
+		int w = 0;
+		
+		for(int vw = 0; vw < this.arestas.size(); vw++){
+				v = this.arestas.get(vw).obterVertice_V_daAresta();
+				w = this.arestas.get(vw).obterVertice_W_daAresta();
+				if(v == r) {
+					u = w;
+					
+				}
+				else if(w == r) {
+					u = v;
+				}
+			}
+		
+		return u;
+	}
+	//Novo metodo
+	public int proximoViz(int r,int s) {
+		int u = 0;
+		int v = 0;
+		int w = 0;
+		
+		for(int vw = 0; vw < this.arestas.size(); vw++){
+				v = this.arestas.get(vw).obterVertice_V_daAresta();
+				w = this.arestas.get(vw).obterVertice_W_daAresta();
+				if(v == r) {
+					if(w != s) {
+						u = w;
+					}
+					
+				}
+				else if(w == r) {
+					if(v != s) {
+						u = v;
+						
+					}
+				}
+			}
+		
+		return u;
+		
+	}
+	//Novo metodo
+	public int encontraVW(int v, int w) {
+		int vw;
+		
+		for(vw = 0; vw < this.arestas.size(); vw++){
+			
+			if(this.arestas.get(vw).obterVertice_V_daAresta() == v) {
+				if(this.arestas.get(vw).obterVertice_W_daAresta() == w) {
+					break;
+				}
+			}
+			else if(this.arestas.get(vw).obterVertice_W_daAresta() == v) {
+				if(this.arestas.get(vw).obterVertice_V_daAresta() == w) {
+					break;
+				}
+			}
+		}
+		return vw;
 	}
 }

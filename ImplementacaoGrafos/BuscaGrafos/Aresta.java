@@ -8,6 +8,37 @@ public class Aresta {
 		this.descoberta = false;
 		this.numAresta = "";
 	}
+	public int obterVertice_V_daAresta() {
+		int v = 0;
+		String aux ="";
+		String aux2 = "";
+		for(int i = 0; i < numAresta.length(); i++) {
+			if(",".equals(Character.toString(numAresta.charAt(i)))) {
+				break;
+			}
+			
+			aux = Character.toString(numAresta.charAt(i));
+			aux2 = aux2 + aux;
+		}
+		 v = Integer.parseInt(aux2);
+		return v;
+	}
+	
+	public int obterVertice_W_daAresta() {
+		int w = 0;
+		String temp ="";
+		String temp2 ="";
+		
+		for(int i = numAresta.indexOf(','); i < numAresta.length(); i++) {
+			if(",".equals(Character.toString(numAresta.charAt(i)))) {
+				i++;
+			}
+			temp = Character.toString(numAresta.charAt(i));
+			temp2 = temp2 + temp;
+		}
+		w = Integer.parseInt(temp2);
+		return w;
+	}
 	
 	public boolean getExplorada() {
 		return explorada;
@@ -31,16 +62,5 @@ public class Aresta {
 	
 	public void setNumAresta(String numAresta) {
 		this.numAresta = numAresta;
-	}
-	public int obterVertice_V_daAresta() {
-		int v = 0;
-		v = Character.getNumericValue(this.numAresta.charAt(0)); 
-		return v;
-	}
-	
-	public int obterVertice_W_daAresta() {
-		int w = 0;
-		w = Character.getNumericValue(this.numAresta.charAt(2));
-		return w;
 	}
 }

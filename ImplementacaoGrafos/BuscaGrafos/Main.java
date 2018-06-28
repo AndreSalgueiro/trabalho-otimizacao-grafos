@@ -11,14 +11,20 @@ public class Main {
 		Grafo grafo = new Grafo(lerArq);
 		BuscaEmGrafo buscar = new BuscaEmGrafo();
 		
-		buscar.busca(grafo, 1);
+		buscar.busca(grafo);
 		System.out.println("Busca\n");
 		for(Aresta arestas : grafo.getArestas()) {
 			System.out.println("Aresta - "+arestas.getNumAresta()+" | Descoberta - "+arestas.getDescoberta()+" | Explorada - " +arestas.getExplorada()+"\n");
 		}
 		
+		
 		buscar.buscaCompleta(grafo);
 		System.out.println("\nBusca Completa\n");
+		for(Aresta arestas : grafo.getArestas()) {
+			System.out.println("Aresta - "+arestas.getNumAresta()+" | Descoberta - "+arestas.getDescoberta()+" | Explorada - " +arestas.getExplorada()+"\n");
+		}
+		
+		buscar.ehConexo(grafo);
 		for(Aresta arestas : grafo.getArestas()) {
 			System.out.println("Aresta - "+arestas.getNumAresta()+" | Descoberta - "+arestas.getDescoberta()+" | Explorada - " +arestas.getExplorada()+"\n");
 		}

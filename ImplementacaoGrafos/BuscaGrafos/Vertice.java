@@ -1,6 +1,9 @@
 package BuscaGrafos;
 
-public class Vertice {
+import java.util.List;
+import java.util.Collections;
+
+public class Vertice implements Comparable<Vertice>{
 	private boolean visitado;
 	private int numVertice;
 	
@@ -23,6 +26,17 @@ public class Vertice {
 
 	public void setNumVertice(int numVertice) {
 		this.numVertice = numVertice;
+	}
+	//Ordena o vetor de vertices
+	@Override
+	public int compareTo(Vertice vertice) {
+		 if (this.getNumVertice() < vertice.getNumVertice()) {
+	            return -1;
+	        }
+	        if (this.getNumVertice() > vertice.getNumVertice()) {
+	            return 1;
+	        }
+	        return 0;
 	}
 
 }

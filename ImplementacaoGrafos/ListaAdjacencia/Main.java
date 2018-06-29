@@ -10,19 +10,22 @@ public class Main {
 		int u, v; 
 		Scanner sc = new Scanner(System.in);
 		try {
-			FileReader arquivo = new FileReader("Grafos.txt");
+			FileReader arquivo = new FileReader("Grafos_Matriz_Lista_Adjacencia.txt");
 			BufferedReader lerArquivo = new BufferedReader(arquivo);
 			
 			Grafo grafo = new Grafo(lerArquivo);
 			ListaAdjacencia lista = new  ListaAdjacencia();
 			
+			long timeInicio = System.nanoTime();
+			
 			lista.lerGrafo(grafo);//monta a lista adjacencia
 			
-			//fechando o arquivo
-			
+			long timeFinal = System.nanoTime();
+			long elapsTime = timeFinal - timeInicio;
+			System.out.println("O metodo executou em\n " +elapsTime);
 			
 			//imprime a lista adjacencia
-			System.out.println("Lista Adjacência \n" + lista.formataSaidaLista(grafo));
+			System.out.println("\nLista Adjacência \n" + lista.formataSaidaLista(grafo));
 			System.out.println("Instruções\n");
 			System.out.println("Digite o primeiro valor e tecle enter e digite o segundo valor e tecle enter\n");
 			

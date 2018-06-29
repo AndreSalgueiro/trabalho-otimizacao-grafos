@@ -10,13 +10,19 @@ public class Main {
 		try {
 		int u = 0, v =0;
 		Scanner sc = new Scanner(System.in);
-		FileReader arquivo = new FileReader("Grafos.txt");
+		FileReader arquivo = new FileReader("Grafos_Matriz_Lista_Adjacencia.txt");
 		BufferedReader lerArquivo = new BufferedReader(arquivo);
 		
 		Grafo grafo = new Grafo(lerArquivo);
 		MatrizAdjacencia matriz = new  MatrizAdjacencia();
 		
+		long timeInicio = System.nanoTime();
+		
 		matriz.lerGrafo(grafo);//monta a matriz adjacencia
+		
+		long timeFinal = System.nanoTime();
+		long elapsTime = timeFinal - timeInicio;
+		System.out.println("O metodo executou em\n " +elapsTime);
 		
 		System.out.println("Matriz Adjacência \n" + grafo.formataSaidaDaMatriz());
 		System.out.println("Instruções\n");

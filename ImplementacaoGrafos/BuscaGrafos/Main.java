@@ -9,7 +9,7 @@ import java.util.List;
 public class Main {
 	public static void main(String[] args)throws Exception {
 		
-		FileReader arquivo = new FileReader("Grafo_Ciclo.txt");
+		FileReader arquivo = new FileReader("Grafo_ConexoParaMedirTempo.txt");
 		BufferedReader lerArq = new BufferedReader(arquivo);
 		Grafo grafo = new Grafo(lerArq);
 		BuscaEmGrafo buscar = new BuscaEmGrafo();
@@ -136,18 +136,27 @@ public class Main {
 		
 		//****************************************************************************************************************************************************
 		
+//		long timeInicio = System.nanoTime();
+//		
+//		Grafo grafoImprimir = buscar.obterFlorestaGeradora(grafo); //Usa Busca Completa
+//		
+//		long timeFinal = System.nanoTime();
+//		long elapsTime = timeFinal - timeInicio;
+//		System.out.println("O metodo executou em\n " +elapsTime);
+//		for(int i = 0; i < grafoImprimir.getArestas().size(); i++) {
+//			
+//			System.out.println("\nArestas da foresta geradora\n\n"+grafoImprimir.getArestas().get(i));
+//		}
+		
+		//****************************************************************************************************************************************************
+		
 		long timeInicio = System.nanoTime();
 		
-		Grafo grafoImprimir = buscar.obterFlorestaGeradora(grafo); //Usa Busca Completa
+		buscar.buscaProfundidade(grafo, 1);
 		
 		long timeFinal = System.nanoTime();
 		long elapsTime = timeFinal - timeInicio;
 		System.out.println("O metodo executou em\n " +elapsTime);
-		for(int i = 0; i < grafoImprimir.getArestas().size(); i++) {
-			
-			System.out.println("\nArestas da foresta geradora\n\n"+grafoImprimir.getArestas().get(i));
-		}
-		
 		//****************************************************************************************************************************************************
 		
 		arquivo.close();
